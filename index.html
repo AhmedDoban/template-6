@@ -14,18 +14,48 @@
 
     <!--Style-->
     <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/fontawesome.min.css" />
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <i class="fas fa-arrow-up back-to-top"></i>
+    <!---------------------Start Setting Box-------------------------------------->
+    <div class="setting-box">
+      <div class="icon-container">
+        <i class="fas fa-gear"></i>
+      </div>
+      <div class="setting-container">
+        <div class="option-container">
+          <h4>Colors</h4>
+          <ul class="box-colors">
+            <li class="active" data-color="#ff9800"></li>
+            <li data-color="#006fe3"></li>
+            <li data-color="#cb1919"></li>
+            <li data-color="#005248"></li>
+            <li data-color="#aea8ba"></li>
+          </ul>
+        </div>
+        <div class="option-container">
+          <h4>Random background</h4>
+          <div class="random-background">
+            <span class="yes active" data-background="yes">Yes</span>
+            <span class="no" data-background="no">No</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!---------------------End Setting Box-------------------------------------->
+
     <!---------------------Start Landing-------------------------------------->
     <div class="landing">
       <div class="container">
         <div class="header">
           <h1 class="logo">Special Design</h1>
           <ul class="main-header">
-            <li><a href="#" data-section=".about-us">About</a></li>
+            <li>
+              <a href="#" data-section=".about-us" class="active">About</a>
+            </li>
             <li><a href="#" data-section=".skills">Skills</a></li>
             <li><a href="#" data-section=".gallery">Gallery</a></li>
             <li><a href="#" data-section=".timeline">Timeline</a></li>

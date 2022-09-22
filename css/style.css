@@ -91,6 +91,94 @@ p {
   margin-bottom: 30px;
 }
 /*ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ
+# Setting Box 
+ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ*/
+.setting-box {
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: -200px;
+  background-color: #fff;
+  width: 200px;
+  min-height: 100vh;
+  transition: var(--main-transition);
+}
+.setting-box.open {
+  left: 0;
+}
+.setting-box .icon-container {
+  background-color: var(--main-color);
+  position: absolute;
+  right: -30px;
+
+  text-align: center;
+  cursor: pointer;
+  color: #fff;
+  top: 100px;
+}
+.setting-box .icon-container i {
+  width: 30px;
+  padding: 8px 0;
+}
+
+.setting-container .option-container {
+  background-color: rgb(217, 217, 217);
+  margin: 0;
+  padding: 20px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.setting-container .option-container h4 {
+  color: #000;
+  margin-bottom: 15px;
+  font-size: 15px;
+}
+/*Color Box*/
+.setting-container .option-container ul {
+  display: flex;
+  gap: 10px;
+}
+.setting-container .option-container ul li {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  opacity: 0.4;
+}
+.setting-container .option-container ul li.active {
+  border: 2px solid #fff;
+}
+.setting-container .option-container ul li:nth-child(1) {
+  background-color: #ff9800;
+}
+.setting-container .option-container ul li:nth-child(2) {
+  background-color: #006fe3;
+}
+.setting-container .option-container ul li:nth-child(3) {
+  background-color: #cb1919;
+}
+.setting-container .option-container ul li:nth-child(4) {
+  background-color: #005248;
+}
+.setting-container .option-container ul li:nth-child(5) {
+  background-color: #aea8ba;
+}
+/*Random background box*/
+.setting-container .random-background .yes,
+.setting-container .random-background .no {
+  width: 50px;
+  background-color: var(--main-color);
+  color: #fff;
+  display: inline-block;
+  padding: 3px 0px;
+  opacity: 0.5;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.setting-container .option-container .active {
+  opacity: 1;
+}
+/*ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ
 # Landing 
 ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ*/
 .landing {
@@ -152,6 +240,10 @@ p {
   transition: var(--main-transition);
 }
 .landing .main-header > li > a:hover {
+  color: var(--main-color);
+}
+.landing .main-header > li > a.active,
+.landing .main-header > li > a.active:hover {
   color: var(--main-color);
 }
 .landing .home {
