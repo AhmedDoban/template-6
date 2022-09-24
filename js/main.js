@@ -101,8 +101,73 @@ randomImg = () => {
     BG_ClearInterval = setInterval(() => {
       let random = Math.floor(Math.random() * bg.length);
       landing.style.cssText = `background-image: url(../img/${bg[random]})`;
-    }, 1000);
+    }, 10000);
   }
 };
 
 randomImg();
+/*ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ
+# our Skills
+ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ*/
+let ourSkills = document.querySelector(".our-skills");
+
+window.onscroll = () => {
+  // offsetTop  mean the value of the height before the section
+  let offsetTop = ourSkills.offsetTop;
+  // offsetHeight  mean the value of the height of the section skills
+  let offsetHeight = ourSkills.offsetHeight;
+  // WindowHeight  mean the value of the height of the hole window
+  let WindowHeight = window.innerHeight;
+  // windowScrollTop  mean the value of the current hight from the WindowHeight
+  let windowScrollTop = window.pageYOffset;
+  if (windowScrollTop > offsetTop + offsetHeight - WindowHeight) {
+    let allSkills = document.querySelectorAll(
+      ".skill-box .skill-progress span "
+    );
+    allSkills.forEach((skill) => {
+      skill.style.width = skill.dataset.proggress;
+    });
+  }
+};
+/*ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ
+# our gallary
+ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ*/
+let allImgs = document.querySelectorAll(".our-gallary img");
+allImgs.forEach((img) => {
+  img.addEventListener("click", (e) => {
+    //overlay
+    let overlay = document.createElement("div");
+    overlay.className = "popup-overlay";
+    document.body.appendChild(overlay);
+    // popup box
+    let popupBox = document.createElement("div");
+    popupBox.className = "popup-Box";
+    // alt text
+    if (img.alt !== null) {
+      let altHeading = document.createElement("h3");
+      textNode = document.createTextNode(img.alt);
+      altHeading.appendChild(textNode);
+      popupBox.appendChild(altHeading);
+    }
+
+    // img popup
+    let img_pop = document.createElement("img");
+    img_pop.className = "poped-img";
+    img_pop.src = img.src;
+    popupBox.appendChild(img_pop);
+    document.body.appendChild(popupBox);
+    // close button
+    let closeButton = document.createElement("span");
+    let closeButtonText = document.createTextNode("X");
+    closeButton.appendChild(closeButtonText);
+    closeButton.className = "close-button";
+    popupBox.appendChild(closeButton);
+  });
+});
+
+document.addEventListener("click", (e) => {
+  if (e.target.className == "close-button") {
+    e.target.parentNode.remove();
+    document.querySelector(".popup-overlay").remove();
+  }
+});
