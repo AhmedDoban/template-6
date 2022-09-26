@@ -572,3 +572,55 @@ p {
   bottom: 0px;
   left: 25%;
 }
+/*ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ
+# testimonials
+ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ*/
+.testimonials {
+  position: relative;
+  padding-top: var(--main-padding-top);
+  padding-bottom: var(--main-padding-bottom);
+}
+.testimonials h2 {
+  color: #fff;
+  margin: 30px 0px;
+  font-weight: bold;
+}
+.testimonials .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 10px;
+}
+.testimonials::before,
+.testimonials::after {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  content: "";
+  z-index: -1;
+  background-color: var(--main-color);
+  top: 0;
+  left: 0;
+}
+.testimonials::after {
+  background-color: #333;
+  left: 50%;
+}
+.testimonials .container .box {
+  background-color: #eee;
+  padding: 20px;
+}
+.testimonials .container .box p {
+  font-size: 14px;
+  margin-bottom: 50px;
+}
+.testimonials .container .box h4 {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.testimonials .container .box span {
+  text-align: center;
+  display: block;
+  font-size: 13px;
+  color: #767676;
+}
