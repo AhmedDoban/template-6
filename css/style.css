@@ -163,8 +163,8 @@ p {
   background-color: #aea8ba;
 }
 /*Random background box*/
-.setting-container .random-background .yes,
-.setting-container .random-background .no {
+.setting-container .option-container .yes,
+.setting-container .option-container .no {
   width: 50px;
   background-color: var(--main-color);
   color: #fff;
@@ -177,6 +177,52 @@ p {
 }
 .setting-container .option-container .active {
   opacity: 1;
+}
+/*ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ
+# Nav Bullets
+ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ*/
+.nav-bullets {
+  position: fixed;
+  right: 0;
+  z-index: 999;
+  width: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.nav-bullets .bullet {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border: 3px solid var(--main-color);
+  margin: 15px auto;
+  border-radius: 50%;
+  cursor: pointer;
+  overflow: hidden;
+}
+.nav-bullets .bullet:hover {
+  overflow: visible;
+}
+.nav-bullets .bullet .tooltip {
+  position: absolute;
+  right: 35px;
+  padding: 5px 10px;
+  top: -5px;
+  width: 120px;
+  background-color: var(--main-color);
+  color: #fff;
+  text-align: center;
+  cursor: default;
+  pointer-events: none;
+}
+.nav-bullets .bullet .tooltip::before {
+  position: absolute;
+  content: "";
+  border-width: 8px;
+  border-style: solid;
+  border-color: transparent transparent transparent var(--main-color);
+  right: -15px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 /*ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ
 # Landing 
@@ -471,7 +517,7 @@ p {
   width: calc(50% - 25px);
   margin-bottom: 40px;
 }
-/*bolt*/
+/*bullet*/
 .timeline .timeline-content .right::before,
 .timeline .timeline-content .left::before {
   position: absolute;

@@ -90,6 +90,38 @@ random_bg_option.forEach((span) => {
     }
   });
 });
+/********* # Show And hide bullets # **************/
+let bullets = document.querySelectorAll(".show-bullets span");
+let show = localStorage.getItem("show-bullets");
+let nav_bullets = document.querySelector(".nav-bullets");
+if (show !== null) {
+  bullets.forEach((e) => {
+    e.classList.remove("active");
+  });
+  if (show === "true") {
+    nav_bullets.style.display = "block";
+    document.querySelector(".show-bullets .yes").classList.add("active");
+  } else {
+    nav_bullets.style.display = "none";
+    document.querySelector(".show-bullets .no").classList.add("active");
+  }
+}
+bullets.forEach((bull) => {
+  bull.addEventListener("click", (e) => {
+    bullets.forEach((e) => {
+      e.classList.remove("active");
+    });
+    e.target.classList.add("active");
+    if (e.target.dataset.bullets == "yes") {
+      nav_bullets.style.display = "block";
+      localStorage.setItem("show-bullets", true);
+    } else {
+      nav_bullets.style.display = "none";
+      localStorage.setItem("show-bullets", false);
+    }
+  });
+});
+
 /*ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ
 # landing bg
 ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ*/
@@ -177,3 +209,21 @@ document.addEventListener("click", (e) => {
     document.querySelector(".popup-overlay").remove();
   }
 });
+/*ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ
+# Nav Bullets
+ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ*/
+let AllBullets = document.querySelectorAll(".nav-bullets .bullet");
+let links = document.querySelectorAll(".main-header a");
+
+scrollToSomewhere = (elements) => {
+  elements.forEach((ele) => {
+    ele.addEventListener("click", (e) => {
+      e.preventDefault();
+      document.querySelector(e.target.dataset.section).scrollIntoView({
+        behavior: "smooth",
+      });
+    });
+  });
+};
+scrollToSomewhere(AllBullets);
+scrollToSomewhere(links);
