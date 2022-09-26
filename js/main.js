@@ -94,13 +94,19 @@ random_bg_option.forEach((span) => {
 # landing bg
 ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ*/
 let landing = document.querySelector(".landing");
-let bg = ["01.jpg", "02.jpg", "03.jpg", "04.jpg", "05.jpg"];
+let bg = [
+  "../img/01.jpg",
+  "../img/02.jpg",
+  "../img/03.jpg",
+  "../img/04.jpg",
+  "../img/05.jpg",
+];
 
 randomImg = () => {
   if (backgroundOption === true) {
     BG_ClearInterval = setInterval(() => {
       let random = Math.floor(Math.random() * bg.length);
-      landing.style.cssText = `background-image: url(../img/${bg[random]})`;
+      landing.style.cssText = `background-image: url(${bg[random]})`;
     }, 10000);
   }
 };
