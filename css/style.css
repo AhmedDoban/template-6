@@ -84,6 +84,7 @@ p {
 }
 /*main-title*/
 .main-title {
+  position: relative;
   color: var(--main-color);
   text-align: center;
   font-size: 30px;
@@ -591,7 +592,7 @@ p {
 }
 .our-feature .container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   gap: 30px;
 }
 .our-feature .container img {
@@ -669,4 +670,84 @@ p {
   display: block;
   font-size: 13px;
   color: #767676;
+}
+/*ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ
+# Contact Us
+ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ*/
+.contact-us {
+  position: relative;
+  padding-top: calc(var(--main-padding-top) * 2);
+  padding-bottom: calc(var(--main-padding-bottom) * 4);
+  background-image: url(../img/contact.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.contact-us::before {
+  position: absolute;
+  content: "";
+  background-color: rgba(255, 255, 255, 0.6);
+  width: 100%;
+  top: 0;
+  height: 100%;
+}
+.contact-us .container {
+  position: relative;
+}
+.contact-us form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 800px;
+  margin: 0 auto;
+  gap: 10px;
+}
+.contact-us form .left,
+.contact-us form .right {
+  flex-basis: 49%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.contact-us form input,
+.contact-us form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  outline: none;
+  background-color: rgba(219, 219, 219, 0.25);
+  font-size: 14px;
+  transition: var(--main-transition);
+}
+.contact-us form input:focus,
+.contact-us form textarea:focus {
+  outline: none;
+
+  border-top: 1px solid var(--main-color);
+  border-bottom: 1px solid var(--main-color);
+}
+.contact-us form input:focus::placeholder {
+  opacity: 0;
+  transition: var(--main-transition);
+}
+.contact-us form textarea {
+  resize: none;
+  min-height: 135px;
+}
+.contact-us form input[type="submit"] {
+  background-color: var(--main-color);
+  color: #fff;
+}
+@media (max-width: 767px) {
+  .contact-us form .left,
+  .contact-us form .right {
+    width: 80%;
+    flex: 100%;
+    flex: 1;
+  }
+  .contact-us form {
+    width: 100%;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
 }

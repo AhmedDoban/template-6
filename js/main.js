@@ -225,5 +225,6 @@ scrollToSomewhere = (elements) => {
     });
   });
 };
+
 scrollToSomewhere(AllBullets);
 scrollToSomewhere(links);
