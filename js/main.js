@@ -228,3 +228,21 @@ scrollToSomewhere = (elements) => {
 
 scrollToSomewhere(AllBullets);
 scrollToSomewhere(links);
+/*ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ
+# Reset Options
+ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ*/
+let resetOptions = document.querySelector(".reset-options");
+resetOptions.addEventListener("click", () => {
+  let localItems = ["background_roundom", "color_option", "show-bullets"];
+  for (let i = 0; i < localItems.length; i++) {
+    localStorage.removeItem(localItems[i]);
+  }
+  window.location.reload();
+});
+/*ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ
+# toggle-menu
+ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ*/
+let toggleMenu = document.querySelector(".toggle-menu");
+toggleMenu.addEventListener("click", () => {
+  document.querySelector(".main-header").classList.toggle("open");
+});

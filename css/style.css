@@ -179,6 +179,14 @@ p {
 .setting-container .option-container .active {
   opacity: 1;
 }
+.setting-box .reset-options {
+  width: 100%;
+  background-color: var(--main-color);
+  color: #fff;
+  padding: 8px;
+  border: none;
+  cursor: pointer;
+}
 /*ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ
 # Nav Bullets
 ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ*/
@@ -271,11 +279,7 @@ p {
   display: flex;
   flex-wrap: wrap;
 }
-@media (max-width: 767px) {
-  .landing .main-header {
-    display: none;
-  }
-}
+
 .landing .main-header > li > a {
   padding: 0 10px;
   height: 70px;
@@ -311,6 +315,55 @@ p {
 }
 .landing .home span {
   color: var(--main-color);
+}
+.nav-container .toggle-menu {
+  display: flex;
+  width: 30px;
+  height: 30px;
+  flex-wrap: wrap;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: none;
+}
+.nav-container .toggle-menu span {
+  width: 100%;
+  height: 1px;
+  background-color: var(--main-color);
+}
+@media (max-width: 767px) {
+  .landing .main-header {
+    display: none;
+  }
+  .nav-container .toggle-menu {
+    display: flex;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 999;
+  }
+  .landing .main-header.open:before {
+    position: absolute;
+    content: "";
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent #fff transparent;
+    top: -20px;
+    right: 15px;
+  }
+  .landing .main-header.open {
+    position: fixed;
+    display: block;
+    top: 72px;
+    right: 10px;
+    min-width: 95%;
+    background-color: rgba(255, 255, 255, 0.959);
+    color: #000;
+    z-index: 999;
+  }
+  .landing .main-header.open li a {
+    color: var(--main-color);
+  }
 }
 /*ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ
 # About 
