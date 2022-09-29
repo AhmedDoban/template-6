@@ -211,6 +211,7 @@ p {
 .nav-bullets .bullet:hover {
   overflow: visible;
 }
+
 .nav-bullets .bullet .tooltip {
   position: absolute;
   right: 35px;
@@ -571,6 +572,7 @@ p {
   width: calc(50% - 25px);
   margin-bottom: 40px;
 }
+
 /*bullet*/
 .timeline .timeline-content .right::before,
 .timeline .timeline-content .left::before {
@@ -634,6 +636,20 @@ p {
   left: -20px;
   border-color: var(--main-background-color) #fff var(--main-background-color)
     var(--main-background-color);
+}
+@media (max-width: 767px) {
+  .timeline .timeline-content .left,
+  .timeline .timeline-content .right {
+    width: 100%;
+  }
+  .timeline .timeline-content .right::before,
+  .timeline .timeline-content .left::before {
+    display: none;
+  }
+  .timeline .timeline-content .right .content::before,
+  .timeline .timeline-content .left .content::before {
+    display: none;
+  }
 }
 /*ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ
 # our-feature 

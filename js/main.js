@@ -228,6 +228,7 @@ scrollToSomewhere = (elements) => {
 
 scrollToSomewhere(AllBullets);
 scrollToSomewhere(links);
+
 /*ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ
 # Reset Options
 ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ*/
@@ -243,6 +244,18 @@ resetOptions.addEventListener("click", () => {
 # toggle-menu
 ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ*/
 let toggleMenu = document.querySelector(".toggle-menu");
-toggleMenu.addEventListener("click", () => {
-  document.querySelector(".main-header").classList.toggle("open");
+let menu = document.querySelector(".main-header");
+toggleMenu.addEventListener("click", (e) => {
+  e.stopPropagation();
+  menu.classList.toggle("open");
+});
+menu.onclick = function (e) {
+  e.stopPropagation();
+};
+document.addEventListener("click", (e) => {
+  if (e.target !== toggleMenu && e.target !== menu) {
+    if (menu.classList.contains("open")) {
+      menu.classList.toggle("open");
+    }
+  }
 });
