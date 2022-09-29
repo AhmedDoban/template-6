@@ -1,23 +1,4 @@
 /*ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ
-# back-to-top
-ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ*/
-let btn = document.querySelector(".back-to-top");
-btn.addEventListener("click", (e) => {
-  window.scrollTo({
-    top: 0,
-    left: 0,
-    behavior: "smooth",
-  });
-});
-window.onscroll = (ele) => {
-  if (window.scrollY >= 250) {
-    btn.style.cssText = "display : flex";
-  } else {
-    btn.style.cssText = "display : none";
-  }
-};
-
-/*ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ
 # setting box
 ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ*/
 let Setting_Btn = document.querySelector(".setting-box i");
@@ -148,8 +129,24 @@ randomImg();
 # our Skills
 ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ*/
 let ourSkills = document.querySelector(".our-skills");
-
+let btn = document.querySelector(".back-to-top");
+let sections = document.querySelectorAll("section");
+/*ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ
+# back-to-top
+ــــــــــــــــــــــــــــــــــــــــــــــــــــــــــــ*/
+btn.addEventListener("click", (e) => {
+  window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: "smooth",
+  });
+});
 window.onscroll = () => {
+  if (window.scrollY >= 250) {
+    btn.style.cssText = "display : flex";
+  } else {
+    btn.style.cssText = "display : none";
+  }
   // offsetTop  mean the value of the height before the section
   let offsetTop = ourSkills.offsetTop;
   // offsetHeight  mean the value of the height of the section skills
@@ -158,6 +155,7 @@ window.onscroll = () => {
   let WindowHeight = window.innerHeight;
   // windowScrollTop  mean the value of the current hight from the WindowHeight
   let windowScrollTop = window.pageYOffset;
+  // skills
   if (windowScrollTop > offsetTop + offsetHeight - WindowHeight) {
     let allSkills = document.querySelectorAll(
       ".skill-box .skill-progress span "
